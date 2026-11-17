@@ -20,4 +20,10 @@ class Calculator(tk.Tk):
          ("0", 4, 0, lambda: self.add_num(0), 2), (".", 4, 2, lambda: self.add_num(".")), ("=", 4, 3, self.calculate),
      ]
     
-     
+    for btn in buttons:
+                 if len(btn) == 4:
+                     text, row, col, cmd = btn
+                     colspan = 1
+                 else:
+                     text, row, col, cmd, colspan = btn
+                     color = "red" if text == "C" else "orange" if text == "=" else "gray" if text in ["/", "*", "-", "+"] else "lightgray"
