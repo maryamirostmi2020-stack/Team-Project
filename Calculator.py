@@ -42,4 +42,9 @@ class Calculator(tk.Tk):
                             current = ""
         self.result_var.set(current + str(num))
         
+    def add_op(self, op):
+                current = self.result_var.get()
+                if current == "Error":
+                    current = ""
+                self.result_var.set(current + op)
                     
