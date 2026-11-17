@@ -27,3 +27,5 @@ class Calculator(tk.Tk):
                  else:
                      text, row, col, cmd, colspan = btn
                      color = "red" if text == "C" else "orange" if text == "=" else "gray" if text in ["/", "*", "-", "+"] else "lightgray"
+                     
+    tk.Button(frame, text=text, font=("Arial", 20, "bold"), bg=color, fg="black" if color == "lightgray" else "white", command=cmd, height=2, width=4 if text != "0" else 9).grid(row=row, column=col, columnspan=colspan, padx=2, pady=2, sticky="nsew")
