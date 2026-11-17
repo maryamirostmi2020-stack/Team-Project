@@ -35,4 +35,11 @@ class Calculator(tk.Tk):
     for i in range(4):
                 frame.columnconfigure(i, weight=1)
                 
+    def add_num(self, num):
+        current = self.result_var.get()
+        # اصلاح: اگر صفحه خالی یا خطا بود، پاک شود
+        if current in ["0", "Error", ""]:
+                            current = ""
+        self.result_var.set(current + str(num))
         
+                    
