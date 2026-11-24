@@ -69,3 +69,10 @@ class Calculator(tk.Tk):
         if current and current != "Error":
             self.result_var.set(current[:-1] or "0")
                             
+    def negate(self):
+         current = self.result_var.get()
+         if current and current != "Error" and current != "0":
+             if current[0] == "-":
+                 self.result_var.set(current[1:])
+            else:
+                self.result_var.set("-" + current)
