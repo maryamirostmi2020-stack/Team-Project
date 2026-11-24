@@ -76,3 +76,7 @@ class Calculator(tk.Tk):
                  self.result_var.set(current[1:])
             else:
                 self.result_var.set("-" + current)
+                
+    if __name__ == "__main__":
+       app = Calculator()
+       app.mainloop()  
