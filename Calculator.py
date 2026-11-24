@@ -48,3 +48,19 @@ class Calculator(tk.Tk):
                     current = ""
                 self.result_var.set(current + op)
                     
+    def calculate(self):
+        try:
+                 # اصلاح: اگر عبارت خالی بود، خطا ندهد
+                if not self.result_var.get():
+                     return
+                result = eval(self.result_var.get())
+                 # اصلاح: اگر عدد اعشاری بود، صفرهای اضافی حذف شوند
+                if isinstance(result, float) and result.is_integer():
+                     result = int(result)
+               self.result_var.set(str(result))
+        except:
+    self.result_var.set("Error")
+    
+    def clear(self):
+        self.result_var.set("0")
+                            
