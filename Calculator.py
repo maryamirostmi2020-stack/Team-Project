@@ -63,4 +63,9 @@ class Calculator(tk.Tk):
     
     def clear(self):
         self.result_var.set("0")
+        
+    def backspace(self):
+        current = self.result_var.get()
+        if current and current != "Error":
+            self.result_var.set(current[:-1] or "0")
                             
